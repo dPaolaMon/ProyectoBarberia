@@ -1,0 +1,22 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ServiciosController; //Hace referencia a el controlador de servicios
+use App\Http\Controllers\EmpleadosController;
+//use App\Http\Controllers\ServiciosController;
+//use App\Http\Controllers\ServiciosController;
+
+// Ruta principal
+Route::get('/', function () {
+    return view('master'); // ->name('AstroCuts')
+});
+
+
+Route::resource('servicios', ServiciosController::class);
+
+Route::resource('empleados', EmpleadosController::class);
+
+//Route::resource('servicios', ServiciosController::class);
+
+//Route::resource('servicios', ServiciosController::class);
+
