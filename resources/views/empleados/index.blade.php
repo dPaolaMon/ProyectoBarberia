@@ -11,7 +11,7 @@
 	  
 	  	<a href="{{ route('empleados.create') }}">Registrar empleado</a>
 
-	  	<hr>
+	  	<hr> {{-- Form para buscar --}}
 		<h3>Buscar</h3>
 			<form method="GET" action="{{ route('empleados.index') }}">
 				

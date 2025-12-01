@@ -2,7 +2,7 @@
 <html lang="">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>@yield('titulo', 'AstroCuts')</title>
   </head>
   <body>
 	<header></header>
