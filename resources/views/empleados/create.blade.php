@@ -52,7 +52,12 @@
 		<input type="text" name="municipio" required><br>
 
 		<label>Estado:</label>
-		<input type="text" name="estado" required><br>
+		{{-- <input type="text" name="estado" required> --}}
+		<select name="estado" multiple>
+		  <option value="Ciudad de Mexico">Ciudad de Mexico</option>
+		  <option value="Estado de Mexico">Estado de Mexico</option>
+		  <option value="Puebla">Puebla</option>
+		</select><br>
 
 		<label>Código Postal:</label>
 		<input type="number" name="cp" required><br>		

@@ -16,7 +16,7 @@ Route::resource('servicios', ServiciosController::class);
 
 Route::resource('empleados', EmpleadosController::class);
 
-//Route::resource('servicios', ServiciosController::class);
+//Route::resource('citas', CitasController::class);
 
-//Route::resource('servicios', ServiciosController::class);
+//Route::resource('clientes', ClientesController::class);
 

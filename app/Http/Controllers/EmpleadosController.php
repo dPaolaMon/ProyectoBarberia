@@ -15,13 +15,12 @@ class EmpleadosController extends Controller
     public function index()
     {
         // Se comenta la linea 18 para permitir la busqueda
-        $empleados = Empleados::all();
-        /* $empleados = Empleados::query() AJUSTAR
+        //$empleados = Empleados::all();
+        $empleados = Empleados::query() 
 			->Nombre(request('nombre'))
-			->PrecioMin(request('min'))
-			->PrecioMax(request('max'))
+			->nacidosEnMes(request('mes_nacimiento'))
+			->buscarPorTelefono(request('telefono'))
 			->get();
-			*/
         
 		return view('empleados.index', compact('empleados'));
     }

@@ -3,8 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Servicios</title>
+    <link rel="stylesheet" href="{{ asset('css/header_style.css') }}">
   </head>
   <body>
+
+	  @include('includes.header')
+
 	  <h1>Servicios</h1>
 	  
 	  	<a href="{{ route('servicios.create') }}">Nuevo Servicio</a>
@@ -54,12 +58,8 @@
 			@endforelse
 			
 		</table>
-    <header></header>
-    <main></main>
-    <footer>
-		{{--- <a href="{{ route('AstroCuts') }}">Página principal</a> ---}}
-		<a href="{{ url('/') }}">Página principal</a>
 
-    </footer>
+		@include('includes.footer')
+   
   </body>
 </html>

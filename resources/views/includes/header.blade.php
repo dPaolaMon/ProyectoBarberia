@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>@yield('titulo', 'AstroCuts')</title>
-</head>
-<body>
-    
-    {{-- Encabezado principal del sitio --}}
+{{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+
     <header class="main-header">
         
         <div class="logo-container">
@@ -26,27 +18,3 @@
         </nav>
         
     </header>
-
-    <section>
-        @yield('contenido')
-    </section>
-
-    <footer class="main-footer">
-    
-    <div class="footer-section contact-info">
-        <h3>Contacto</h3>
-        <p>Dirección: Calle 123, Municipio, Estado</p>
-        <p>Teléfono: (00) 1234 5678</p>
-        <p>Email: contacto@astrocuts.com</p>
-    </div>
-
-    <div class="footer-section legal-copy">
-        <p class="copyright">
-            &copy; {{ date('Y') }} AstroCuts. Todos los derechos reservados.
-        </p>
-    </div>
-    
-	</footer>
-
-</body>
-</html>

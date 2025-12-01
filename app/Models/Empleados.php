@@ -26,7 +26,7 @@ class Empleados extends Model
 	/* -----------------------
 		SCOPES DE BÚSQUEDA
 	----------------------- */
-	//Verificar funcionalidad
+
 	// Buscar por coincidencia parcial en el nombre
 	public function scopeNombre($query, $nombre)
 	{
