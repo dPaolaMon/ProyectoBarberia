@@ -5,6 +5,8 @@
     <title>@yield('titulo', 'AstroCuts')</title>
   </head>
   <body>
+	      <header></header>
+    <main></main>
 	  <h1>Nuevo Cliente</h1>
 
 	  {{-- Validacion de errores (if) 
@@ -40,9 +42,7 @@
 	<button type="submit">Guardar</button>
 	<a href="{{ route('clientes.index') }}">Regresar</a>
 	</form>
-	
-    <header></header>
-    <main></main>
+
     <footer></footer>
   </body>
 </html>

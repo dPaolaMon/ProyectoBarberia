@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiciosController; //Hace referencia a el controlador de servicios
-use App\Http\Controllers\EmpleadosController; //Hace referencia a el controlador de
-use App\Http\Controllers\ClientesController; //Hace referencia a el controlador de
-//use App\Http\Controllers\CitasController; //Hace referencia a el controlador de
+use App\Http\Controllers\EmpleadosController; //Hace referencia a el controlador de Empleados
+use App\Http\Controllers\ClientesController; //Hace referencia a el controlador de Clientes
+use App\Http\Controllers\CitasController; //Hace referencia a el controlador de Citas
 
 // Ruta principal
 Route::get('/', function () {
@@ -16,7 +16,7 @@ Route::resource('servicios', ServiciosController::class);
 
 Route::resource('empleados', EmpleadosController::class);
 
-//Route::resource('citas', CitasController::class);
+Route::resource('citas', CitasController::class);
 
 Route::resource('clientes', ClientesController::class);
 

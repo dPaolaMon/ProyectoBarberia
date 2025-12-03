@@ -1,0 +1,64 @@
+/* ---------------------------------- */
+/* ESTILOS PARA EL FOOTER DE ASTROCUTS */
+/* ---------------------------------- */
+
+/* 1. Contenedor Principal (Flexbox) */
+.main-footer {
+    /* Distribución horizontal para separar secciones */
+    display: flex;
+    /* Coloca el espacio entre los bloques de Contacto y Legal */
+    justify-content: space-between;
+    /* Alinea los elementos verticalmente al centro */
+    align-items: flex-start; 
+    
+    /* Diseño */
+    padding: 30px 40px; /* Espacio interno */
+    background-color: #222; /* Un poco más oscuro que el header, si es posible */
+    color: #ccc; /* Texto gris claro */
+    font-size: 0.9rem;
+    border-top: 1px solid #333; /* Separador visual sutil */
+}
+
+/* 2. Estilos para todas las Secciones */
+.footer-section {
+    /* Define el tamaño para ocupar un espacio justo */
+    width: 45%; 
+    line-height: 1.6;
+}
+
+/* 3. Títulos */
+.footer-section h3 {
+    color: #fff; /* Título blanco */
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ffc107; /* Línea de acento dorado/ambar */
+    display: inline-block; /* Ajusta el ancho de la línea al texto */
+    padding-bottom: 3px;
+}
+
+/* 4. Bloque de Contacto (contact-info) */
+.contact-info p {
+    margin: 3px 0; /* Espacio reducido entre líneas de contacto */
+}
+
+/* 5. Bloque Legal y Copyright (legal-copy) */
+.legal-copy {
+    text-align: right; /* Alinea el texto legal a la derecha */
+}
+
+.copyright {
+    margin-bottom: 10px;
+    color: #aaa;
+}
+
+.legal-copy a {
+    /* Estilo para los enlaces de Aviso/Principal */
+    color: #ffc107; /* Color de acento para los enlaces */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.legal-copy a:hover {
+    color: #fff;
+    text-decoration: underline;
+} 
