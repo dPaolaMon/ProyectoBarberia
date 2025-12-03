@@ -1,3 +1,4 @@
+@vite(['resources/css/footer_style.css'])
     <footer class="main-footer">
     
     <div class="footer-section contact-info">

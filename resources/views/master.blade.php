@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>@yield('titulo', 'AstroCuts')</title>
+    @vite(['resources/css/header_style.css'])
+    @vite(['resources/css/footer_style.css'])
 </head>
 <body>
     
