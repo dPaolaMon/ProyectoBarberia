@@ -48,18 +48,18 @@
                 
                 <div>
                     <label for="fecha_nac">Fecha de Nacimiento:</label>
-                    <input type="date" id="fecha_nac" name="fecha_nac" value="{{ old('fecha_nac') }}" required>
+                    <input type="date" max="2010-12-07" min="1940-01-01" id="fecha_nac" name="fecha_nac" value="{{ old('fecha_nac') }}" required>
                 </div>
                 
                 <div>
                     <label for="telefono">Teléfono:</label>
                     <input type="text" id="telefono" name="telefono" value="{{ old('telefono') }}" required maxlength="10">
                 </div>
-                
+                {{-- SE ELIMINA PARA QUE SE ALMACENE EN LA TABLA USERS
                 <div>
                     <label for="correo">Correo Electrónico:</label>
                     <input type="email" id="correo" name="correo" value="{{ old('correo') }}" required>
-                </div>
+                </div> --}}
                 
             </div>
             

@@ -26,8 +26,8 @@ class StoreClientesRequest extends FormRequest
 			'nombre' => 'required|string|max:100',
 			'apellido' => 'required|string|max:100', 
 			'fecha_nac' => 'required|date|before_or_equal:today', 
-			'telefono' => 'required|numeric|digits:10',
-			'correo' => 'required|email|max:100'
+			'telefono' => 'required|numeric|digits:10'
+			// SE ELIMINA PARA QUE SE ALMACENE EN LA TABLA USERS'correo' => 'required|email|max:100'
 			//'total_visitas' => 'required|numeric' (No se tomará en cuenta)
         ];
     }

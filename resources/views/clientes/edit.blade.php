@@ -19,13 +19,13 @@
 		<input type="text" name="apellido" value="{{ $clientes-> apellido }}" required><br>
 
 		<label>Fecha de Nacimiento:</label>
-		<input type="date" name="fecha_nac" value="{{ $clientes->fecha_nac }}" required><br>
+		<input type="date" max="2010-12-07" min="1940-01-01" name="fecha_nac" value="{{ $clientes->fecha_nac }}" required><br>
 
 		<label>Teléfono:</label>
 		<input type="number" name="telefono" value="{{ $clientes->telefono }}" required><br>
-
+		{{-- SE ELIMINA PARA QUE SE ALMACENE EN LA TABLA USERS
 		<label>Correo Electronico:</label>
-		<input type="email" name="correo" value="{{ $clientes->correo }}" required><br>			
+		<input type="email" name="correo" value="{{ $clientes->correo }}" required><br>	--}}		
 
 
 		<button type="submit">Actualizar</button>

@@ -15,6 +15,7 @@
                 <li class="nav-item"><a href="/clientes" class="nav-link">Clientes</a></li>
                 <li class="nav-item"><a href="/citas" class="nav-link">Citas</a></li>
                 <li class="nav-item"><a href="/empleados" class="nav-link">Empleados</a></li>
+                <li class="nav-item"><a href="/login" class="nav-link">Iniciar Sesión</a></li>
             </ul>
         </nav>
         

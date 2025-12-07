@@ -14,7 +14,7 @@ class Clientes extends Model
 	'apellido',
 	'fecha_nac',
 	'telefono',
-	'correo',
+	//'correo',
 	'total_visitas'
 	];
 

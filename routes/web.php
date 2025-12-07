@@ -1,25 +1,31 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ServiciosController; //Hace referencia a el controlador de servicios
-use App\Http\Controllers\EmpleadosController; //Hace referencia a el controlador de Empleados
-use App\Http\Controllers\ClientesController; //Hace referencia a el controlador de Clientes
-use App\Http\Controllers\CitasController; //Hace referencia a el controlador de Citas
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CitasController;// Importar controlador de citas
 
-// Ruta principal
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
-    return view('master'); // ->name('AstroCuts')
+    return view('master');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');    
+});
+
+Route::get('/citas', function () {
+        return view('citas.index'); // Vista principal de Citas
+    })->name('citas.index');
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('citas', CitasController::class); //Define las todas las rutas (TODO:AJUSTAR)
 });
 
 
-Route::resource('servicios', ServiciosController::class);
-
-Route::resource('empleados', EmpleadosController::class);
-
-Route::resource('citas', CitasController::class);
-
-Route::resource('clientes', ClientesController::class);
-
-// En routes/web.php
-Route::put('/citas/{cita}/completar', [CitasController::class, 'completarCita'])->name('citas.completar');
-
+require __DIR__.'/auth.php';

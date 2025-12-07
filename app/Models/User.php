@@ -9,6 +9,21 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+	public function esAdmin(): bool
+	{
+		return $this->role === 'admin';
+	}
+
+	/*public function esEmpleado(): bool
+	{
+		return $this->role === 'employee';
+	}
+
+	public function esCliente(): bool
+	{
+		return $this->role === 'client';
+	} */
+
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 

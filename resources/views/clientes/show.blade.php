@@ -20,9 +20,9 @@
 
 		<p><strong>Teléfono:</strong></p>
 		<input type="text" value="{{ $clientes->telefono}}">
-
+		{{-- SE ELIMINA PARA QUE SE ALMACENE EN LA TABLA USERS
 		<p><strong>Correo Electrónico:</strong></p>
-		<input type="email" value="{{ $clientes->correo}}">
+		<input type="email" value="{{ $clientes->correo}}"> --}}
 
 		<p><strong>Fecha de nacimiento:</strong></p>
 		<input type="date" value="{{ $clientes->fecha_nac}}"> 
