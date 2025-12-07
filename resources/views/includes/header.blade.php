@@ -1,5 +1,5 @@
 {{-- @vite(['resources/css/header_style.css', 'resources/js/app.js']) --}}
-@vite('resources/css/header_style.css')
+@vite('/resources/css/header_style.css')
 
     <header class="main-header">
         

@@ -1,64 +1,85 @@
 /* ---------------------------------- */
 /* ESTILOS PARA EL FOOTER DE ASTROCUTS */
 /* ---------------------------------- */
-
-/* 1. Contenedor Principal (Flexbox) */
-.main-footer {
-    /* Distribución horizontal para separar secciones */
-    display: flex;
-    /* Coloca el espacio entre los bloques de Contacto y Legal */
-    justify-content: space-between;
-    /* Alinea los elementos verticalmente al centro */
-    align-items: flex-start; 
-    
-    /* Diseño */
-    padding: 30px 40px; /* Espacio interno */
-    background-color: #222; /* Un poco más oscuro que el header, si es posible */
-    color: #ccc; /* Texto gris claro */
-    font-size: 0.9rem;
-    border-top: 1px solid #333; /* Separador visual sutil */
+/* Paleta de Colores (Referencia) */
+:root {
+    --verde-pared: #2F5A55;
+    --madera: #8B4F2E;
+    --khaki: #E8D4A7; /* Acento Principal */
+    --cuero: #B85A33;
+    --negro-profundo: #0F1614;
+    --gris-claro: #f4f4f4;
+    --texto-footer: #c4c4c4; /* Tono de gris suave */
 }
 
-/* 2. Estilos para todas las Secciones */
+/* ---------------------------------- */
+/* 1. Contenedor Principal (Footer) */
+/* ---------------------------------- */
+.main-footer {
+    /* Distribución: Contacto a la izquierda, Legal a la derecha */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinea el contenido al inicio de cada bloque */
+    
+    /* Diseño: Coherencia con el negro profundo */
+    padding: 35px 40px;
+    background-color: var(--negro-profundo); 
+    color: var(--texto-footer); 
+    font-size: 0.95rem;
+    
+    /* Borde superior de acento */
+    border-top: 1px solid var(--verde-pared); 
+}
+
+/* ---------------------------------- */
+/* 2. Estilos de Sección y Títulos */
+/* ---------------------------------- */
 .footer-section {
-    /* Define el tamaño para ocupar un espacio justo */
-    width: 45%; 
+    width: 48%; /* Da espacio a ambos lados */
     line-height: 1.6;
 }
 
-/* 3. Títulos */
 .footer-section h3 {
-    color: #fff; /* Título blanco */
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ffc107; /* Línea de acento dorado/ambar */
-    display: inline-block; /* Ajusta el ancho de la línea al texto */
-    padding-bottom: 3px;
+    color: var(--khaki); /* Títulos en color de acento */
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    /* Subrayado con el color de la madera para un look temático */
+    border-bottom: 2px solid var(--madera); 
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
-/* 4. Bloque de Contacto (contact-info) */
+/* ---------------------------------- */
+/* 3. Información de Contacto */
+/* ---------------------------------- */
 .contact-info p {
-    margin: 3px 0; /* Espacio reducido entre líneas de contacto */
+    margin: 5px 0;
 }
 
-/* 5. Bloque Legal y Copyright (legal-copy) */
+/* ---------------------------------- */
+/* 4. Enlace Legal y Copyright */
+/* ---------------------------------- */
 .legal-copy {
-    text-align: right; /* Alinea el texto legal a la derecha */
+    /* Alinea el contenido legal a la derecha del footer */
+    text-align: right; 
 }
 
 .copyright {
-    margin-bottom: 10px;
-    color: #aaa;
+    color: var(--texto-footer); 
+    margin-bottom: 8px;
+    font-size: 0.85rem;
 }
 
 .legal-copy a {
-    /* Estilo para los enlaces de Aviso/Principal */
-    color: #ffc107; /* Color de acento para los enlaces */
+    /* Estilo del enlace 'Página principal' */
+    color: var(--gris-claro); 
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
 .legal-copy a:hover {
-    color: #fff;
+    color: var(--khaki); /* Acento al pasar el cursor */
     text-decoration: underline;
-} 
+}

@@ -7,7 +7,7 @@
   </head>
   <body>
 
-	  @include('includes.header')
+	  <header>@include('includes.header')</header>
 
 	  <h1>Servicios</h1>
 	  

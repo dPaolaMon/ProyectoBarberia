@@ -1,68 +1,89 @@
- /* ---------------------------------- */
-/* CSS BÁSICO PARA EL HEADER DE ASTROCUTS */
-/* ---------------------------------- */
-
-/* 1. Estilos del Encabezado Principal */
-.main-header {
-    /* Define el contenedor como un Flex Container */
-    display: flex; 
-    /* Alinea el logo y la navegación horizontalmente */
-    justify-content: space-between; 
-    /* Centra los elementos verticalmente */
-    align-items: center; 
-    
-    /* Diseño Básico */
-    padding: 15px 30px; /* Espacio interno superior/inferior y lateral */
-    background-color: #333; /* Fondo oscuro tradicional de barbería */
-    color: #fff; /* Color de texto claro */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+/* ---------------------------------- 	*/
+/* CSS PARA EL HEADER DE ASTROCUTS 		*/
+/* ----------------------------------	*/
+:root {
+    --verde-pared: #2F5A55;
+    --madera: #8B4F2E;
+    --khaki: #E8D4A7; /* Acento Principal para texto y hover */
+    --cuero: #B85A33;
+    --negro-profundo: #0F1614; /* Fondo del header */
+    --gris-claro: #f4f4f4;
 }
 
-/* 2. Estilos del Logo y Título */
+/* ---------------------------------- */
+/* 1. Estilos del Encabezado Principal */
+/* ---------------------------------- */
+.main-header {
+    /* Distribución: Logo a la izquierda, Navegación a la derecha */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    
+    /* Diseño: Coherencia con la paleta oscura */
+    padding: 18px 40px; 
+    background-color: var(--negro-profundo); 
+    color: var(--gris-claro); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más fuerte para contraste */
+    
+    /* Pequeño detalle de borde inferior para acento */
+    border-bottom: 2px solid var(--verde-pared); 
+}
+
+/* ---------------------------------- */
+/* 2. Logo y Título */
+/* ---------------------------------- */
 .logo-container {
     display: flex;
     align-items: center;
 }
 
 .site-logo {
-    /* Si usa una imagen de logo */
-    height: 40px; 
+    /* Estilo para el espacio del logo si la imagen es oscura */
+    height: 45px; 
     width: auto;
     margin-right: 15px;
+    /* Borde o filtro sutil para hacer visible el logo en el fondo oscuro */
+    filter: drop-shadow(0 0 2px var(--khaki)); 
 }
 
 .logo-container h1 {
-    /* Eliminar el margen por defecto del h1 */
-    margin: 0; 
-    font-size: 1.5rem;
-    color: #ffc107; /* Color dorado o de acento */
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--khaki); /* Color de acento claro */
+    text-transform: uppercase;
 }
 
-/* 3. Estilos de Navegación */
-.main-nav {
-    /* El nav es el contenedor del menú */
-}
-
+/* ---------------------------------- */
+/* 3. Navegación (Enlaces) */
+/* ---------------------------------- */
 .nav-list {
-    /* Elimina viñetas por ser un menú */
+    /* Estructura: Horizontal, sin viñetas */
+    display: flex; 
     list-style: none; 
-    /* Elimina el padding y margen por defecto de la lista */
     padding: 0; 
     margin: 0; 
-    /* Hace que la lista sea horizontal */
-    display: flex; 
-    gap: 20px; /* Espacio entre los ítems */
+    gap: 25px; /* Espaciado generoso */
 }
 
 .nav-link {
-    /* Estilos para los enlaces */
-    text-decoration: none; /* Quita el subrayado */
-    color: #fff; /* Color de texto blanco */
+    /* Diseño del texto */
+    text-decoration: none; 
+    color: var(--gris-claro); 
     font-weight: 500;
-    transition: color 0.3s ease;
+    font-size: 1rem;
+    
+    /* Transición suave para la interactividad */
+    transition: color 0.2s ease, border-bottom 0.2s ease;
 }
 
+/* ---------------------------------- */
+/* 4. Interactividad (Hover) */
+/* ---------------------------------- */
 .nav-link:hover {
-    /* Efecto al pasar el mouse */
-    color: #ffc107; /* Resalta el enlace con el color de acento */
+    /* El color de acento para indicar que es clickeable */
+    color: var(--khaki); 
+    /* Detalle sutil para el efecto de pasar el cursor */
+    border-bottom: 2px solid var(--cuero); 
+    padding-bottom: 3px;
 }

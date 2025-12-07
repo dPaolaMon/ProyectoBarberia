@@ -1,24 +1,21 @@
-/*@import 'tailwindcss';
-
-@import 'header_style.css'; 
-
- Archivo: resources/css/app.css */
-
-/*@import 'tailwindcss/base';
+/*
+@import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
  O la versión más simple: */
 @import 'tailwindcss';
 
 @import './header_style.css';
-/* Mantenemos el @import de su estilo del header */
+@import './master_style.css';
 @import './footer_style.css';
 
-/* NOTA: Las directivas @source y @theme FUERON ELIMINADAS 
+@import './clientes/create.css';
+
+/* NOTA: Las directivas @source y @theme FUERON ELIMINADAS */
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-*/
+

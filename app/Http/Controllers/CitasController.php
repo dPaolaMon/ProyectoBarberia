@@ -94,4 +94,39 @@ class CitasController extends Controller
 		return redirect()->route('citas.index');
     }
 
+    // En App\Http\Controllers\CitasController.php (o un método similar)
+
+
+public function completarCita(Cita $cita) 
+{
+    // --- Lógica de la Cita CHECALOOOOOOO ---
+    
+    // 1. Verificar si la cita ya estaba completada para evitar doble conteo
+    if ($cita->estado === 'completada') {
+        return redirect()->back()->with('error', 'La cita ya estaba marcada como completada.');
+    }
+    
+    // 2. Marcar la Cita como completada en la base de datos
+    $cita->update(['estado' => 'completada']);
+
+    // --- Lógica del Cliente (Incremento) ---
+    
+    // 3. Acceder al Cliente relacionado (asumiendo la relación 'cliente()' en el modelo Cita)
+    $cliente = $cita->cliente; 
+    
+    if ($cliente) {
+        // 4. INCREMENTO CLAVE: Aumentar el contador de visitas en 1
+        $cliente->increment('total_visitas');
+
+        // 5. Actualizar la fecha de la última visita (para lógica de promociones)
+        $cliente->update([
+            'ultima_visita' => now()->toDateString(), 
+        ]);
+        
+        // Opcional: Ejecutar lógica de promoción aquí si $cliente->total_visitas % 5 == 0
+    }
+
+    return redirect()->back()->with('success', '✅ Cita finalizada y contador de visitas actualizado.');
+}
+
 }

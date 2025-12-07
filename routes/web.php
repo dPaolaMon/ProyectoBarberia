@@ -20,3 +20,6 @@ Route::resource('citas', CitasController::class);
 
 Route::resource('clientes', ClientesController::class);
 
+// En routes/web.php
+Route::put('/citas/{cita}/completar', [CitasController::class, 'completarCita'])->name('citas.completar');
+

@@ -6,6 +6,7 @@
     <title>@yield('titulo', 'AstroCuts')</title>
     @vite(['resources/css/header_style.css'])
     @vite(['resources/css/footer_style.css'])
+    @vite(['/resources/css/master_style.css'])
 </head>
 <body>
     
@@ -30,8 +31,47 @@
     </header>
 
     <section>
-        @yield('contenido')
-    </section>
+        <main class="main-content">
+        
+        <section class="section">
+            <div class="text-content">
+                <h2>AstroCuts.</h2>
+                <p class="slogan">Tu corte perfecto, agendado en segundos.</p>
+                
+                <a href="" class="btn btn-primary btn-cta">Agendar Mi Cita Ahora</a>
+            </div>
+            
+            <div class="image-container">
+                <img src="" alt="Imagen de barbería tradicional" class="hero-image">
+            </div>
+        </section>
+
+        <section class="services-preview-section">
+            <h3 class="section-title">Nuestros Servicios</h3>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="" alt="Icono de tijeras" class="service-icon">
+                    <h4>Corte Clásico</h4>
+                    <p>Dominamos las técnicas tradicionales de desvanecido y navaja.</p>
+                </div>
+                
+                <div class="service-card">
+                    <img src="" alt="Icono de barba" class="service-icon">
+                    <h4>Arreglo de Barba</h4>
+                    <p>Perfiles definidos y tratamientos de hidratación para tu barba.</p>
+                </div>
+                
+                <div class="service-card">
+                    <img src="" alt="Icono de estrella VIP" class="service-icon">
+                    <h4>Experiencia</h4>
+                    <p>Servicios descripcion.</p>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
 
     <footer class="main-footer">
     
