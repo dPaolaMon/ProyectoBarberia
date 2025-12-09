@@ -36,14 +36,14 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        /* ORIGINAL
-         * $user = User::create([
+        // ORIGINAL
+          $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-        ]); */
+        ]); 
 
-        $user = User::create([
+        /* $user = User::create([
 		'name' => $request->name,
 		'email' => $request->email,
 		'password' => Hash::make($request->password),
@@ -56,7 +56,7 @@ class RegisteredUserController extends Controller
 		'total_visitas' => 0, 
 		// Si el formulario de registro no pide más datos (como teléfono),
 		// esos campos deben ser NULL en la BD para evitar errores.
-		]);
+		]); */
 
         event(new Registered($user));
 

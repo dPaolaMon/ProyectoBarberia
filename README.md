@@ -29,13 +29,11 @@ El sistema surge como respuesta a las problemáticas detectadas durante la opera
 El sistema está diseñado para múltiples tipos de usuario:
 
 * **Público general**  
-  Acceden a la pagina principal y login de la página
+  Acceden a la pagina principal y al modulo de login de la página
 * **Clientes**  
   Agendan citas, consultan servicios y administran su perfil.
 * **Barberos / Empleados**  
-  Gestionan su agenda, visualizan citas y pueden solicitar cancelaciones.
-* **Gerente**  
-  Supervisa citas, ventas, empleados y reportes operativos.
+  Gestionan su agenda, visualizan citas, etc.
 * **Administrador**  
   Control total del sistema: CRUD de empleados, servicios, ventas y configuración general.
 
@@ -49,7 +47,7 @@ El sistema está diseñado para múltiples tipos de usuario:
 * **Composer**
 * **Laravel Templates**
 * **HTML, CSS, JS**
-* (Opcional según avance) Bootstrap / Tailwind / Blade Templates
+* **Bootstrap / Tailwind / Blade Templates**
 
 ---
 
@@ -57,25 +55,19 @@ El sistema está diseñado para múltiples tipos de usuario:
 
 ### 👤 Cliente
 
+* Inicio de sesión.
 * Registro de nuevo cliente.
 * Agendar citas.
-* Consultar catálogo de cortes.
+* Consultar catálogo de servicios.
 * Cancelar citas.
+* Ver perfil.
 
 ### 💈 Barbero
 
 * Inicio de sesión.
 * Página de inicio personalizada.
 * Solicitar cancelación de cita.
-* Ver perfil (emergente).
-
-### 🧑‍💼 Gerente
-
-* Página de inicio del gerente.
-* Revisar solicitudes de cancelación.
-* Consultar empleados.
-* Consultar ventas.
-* Ver ventas por barbero (emergente).
+* Ver perfil.
 
 ### 🛠️ Administrador
 
@@ -91,9 +83,9 @@ El sistema está diseñado para múltiples tipos de usuario:
 Este proyecto contempla un conjunto amplio de requerimientos, entre los que destacan:
 
 * Módulo de citas con agenda.
-* Registro de clientes y programa de lealtad.
+* Registro de clientes.
 * Interfaz intuitiva y responsiva.
-* Seguridad basada en roles y contraseñas seguras.
+* Seguridad basada en **roles** y contraseñas seguras.
 
 *(Los requerimientos completos aparecen en el documento original del proyecto.)*
 
@@ -146,5 +138,7 @@ Asegúrate de tener instalado:
 
 ```bash
 git clone https://github.com/dPaolaMon/ProyectoBarberia.git
-cd astro-cuts
+cd ProyectoBarberia
+
+
 

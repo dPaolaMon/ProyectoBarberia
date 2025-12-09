@@ -12,9 +12,10 @@ class User extends Authenticatable
 	public function esAdmin(): bool
 	{
 		return $this->role === 'admin';
+		// UPDATE `users` SET `role` = 'admin', `email_verified_at` = NULL WHERE `users`.`id` = 1;
 	}
 
-	/*public function esEmpleado(): bool
+	public function esEmpleado(): bool
 	{
 		return $this->role === 'employee';
 	}
@@ -22,7 +23,7 @@ class User extends Authenticatable
 	public function esCliente(): bool
 	{
 		return $this->role === 'client';
-	} */
+	} 
 
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;

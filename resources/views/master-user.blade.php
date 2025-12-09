@@ -20,14 +20,21 @@
         
         <nav class="main-nav">
             <ul class="nav-list">
-                {{-- <li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Inicio</a></li>
-                <li class="nav-item"><a href="/servicios" class="nav-link">Servicios</a></li>
-                <li class="nav-item"><a href="/clientes" class="nav-link">Clientes</a></li>
-                <li class="nav-item"><a href="/citas" class="nav-link">Citas</a></li>
-                <li class="nav-item"><a href="/empleados" class="nav-link">Empleados</a></li>
-                <li class="nav-item"><a href="/profile" class="nav-link">Mi perfil</a></li>--}}
-                <li class="nav-item"><a href="/login" class="nav-link">Iniciar Sesión</a></li>
-                <li class="nav-item"><a href="/register" class="nav-link">Registrame</a></li>
+                {{-- <li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Inicio</a></li>--}}
+                
+                <x-nav-link :href="route('citas.create')" :active="request()->is('citas.create')">{{ __('Citas') }}</x-nav-link>
+				<x-nav-link :href="route('servicios.index')" :active="request()->is('servicios.index')">{{ __('Servicios') }}</x-nav-link>
+                @can ('acceder-clientes')
+                <x-nav-link :href="route('clientes.index')" :active="request()->is('clientes.index')">{{ __('Clientes') }}</x-nav-link>
+                @endcan
+                @can ('acceder-empleados')
+                <x-nav-link :href="route('empleados.index')" :active="request()->is('empleados.index')">{{ __('Empleados') }}</x-nav-link>
+                @endcan
+
+                <li class="nav-item"><a href="/profile" class="nav-link">Mi perfil</a></li>
+                
+                
+                
             </ul>
         </nav>
         
@@ -83,6 +90,7 @@
         <p>Dirección: Calle 123, Municipio, Estado</p>
         <p>Teléfono: (00) 1234 5678</p>
         <p>Email: contacto@astrocuts.com</p>
+        <a href="{{ url('/') }}">Página Principal</a>
     </div>
 
     <div class="footer-section legal-copy">
