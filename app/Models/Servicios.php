@@ -12,7 +12,9 @@ class Servicios extends Model
 	'nombre',
 	'descripcion',
 	'duracion',
-	'precio'
+	'precio',
+	'created_at',
+    'updated_at',
 	];
 
 	/* -----------------------

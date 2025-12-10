@@ -10,12 +10,15 @@ class Clientes extends Model
     protected $table = 'clientes';
 
 	protected $fillable = [
-	'nombre',
-	'apellido',
-	'fecha_nac',
-	'telefono',
-	//'correo',
-	'total_visitas'
+	'id',
+    'nombre',
+    'apellido',
+    'fecha_nac',
+    'telefono',
+    'total_visitas',
+    'user_id',
+    'created_at',
+    'updated_at',
 	];
 
 	/* -----------------------

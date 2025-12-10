@@ -10,17 +10,21 @@ class Empleados extends Model
     protected $table = 'empleados';
 
 	protected $fillable = [
-	'nombre',
-	'apellido',
-	'edad',
-	'fecha_nac',
-	'telefono',
-	'calle',
-	'mz',
-	'lt',
-	'municipio',
-	'estado',
-	'cp'
+	'id',
+    'nombre',
+    'apellido',
+    'edad',
+    'fecha_nac',
+    'telefono',
+    'calle',
+    'mz',
+    'lt',
+    'municipio',
+    'estado',
+    'cp',
+    'user_id',
+    'created_at',
+    'updated_at',
 	];
 
 	/* -----------------------
