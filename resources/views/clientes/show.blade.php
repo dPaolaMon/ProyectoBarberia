@@ -1,37 +1,62 @@
-<!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="utf-8">
-    <title>@yield('titulo', 'AstroCuts')</title>
-  </head>
-  <body>	  
-	<header></header>
-    <main></main>
-	  <h1>@section('titulo', 'Detalles del cliente: ' . $clientes->nombre)</h1>
-	   <h1>Datos del cliente: {{ $clientes->nombre }}</h1>
-		<p><strong>ID:</strong></p>
-		<input value="{{ $clientes->id }}" readonly>
+@extends('layouts.app')
 
-		<p><strong>Nombre:</strong></p>
-		<input type="text" value="{{ $clientes->nombre }}">
+@section('titulo', 'Detalles de ' . $clientes->nombre)
 
-		<p><strong>Apellidos:</strong></p>
-		<input type="text" value="{{ $clientes->apellido }}">
+@section('contenido')
 
-		<p><strong>Teléfono:</strong></p>
-		<input type="text" value="{{ $clientes->telefono}}">
-		{{-- SE ELIMINA PARA QUE SE ALMACENE EN LA TABLA USERS
-		<p><strong>Correo Electrónico:</strong></p>
-		<input type="email" value="{{ $clientes->correo}}"> --}}
+<div class="glass-card">
 
-		<p><strong>Fecha de nacimiento:</strong></p>
-		<input type="date" value="{{ $clientes->fecha_nac}}"> 
+    <h1 class="titulo-seccion">
+        <i class="fa-solid fa-id-card"></i>
+        Detalles del cliente
+    </h1>
 
-		<p><strong>Total de visitas:</strong></p>
-		<input value="{{ $clientes->total_visitas}}" readonly>
-		
-		<a href="{{ route('clientes.index') }}">Volver</a>
+    <div class="detalle-cliente">
 
-    <footer></footer>
-  </body>
-</html>
+        <div class="campo-detalle">
+            <label>ID:</label>
+            <input type="text" value="{{ $clientes->id }}" readonly>
+        </div>
+
+        <div class="campo-detalle">
+            <label>Nombre:</label>
+            <input type="text" value="{{ $clientes->nombre }}" readonly>
+        </div>
+
+        <div class="campo-detalle">
+            <label>Apellidos:</label>
+            <input type="text" value="{{ $clientes->apellido }}" readonly>
+        </div>
+
+        <div class="campo-detalle">
+            <label>Teléfono:</label>
+            <input type="text" value="{{ $clientes->telefono }}" readonly>
+        </div>
+
+        <div class="campo-detalle">
+            <label>Fecha de nacimiento:</label>
+            <input type="date" value="{{ $clientes->fecha_nac }}" readonly>
+        </div>
+
+        <div class="campo-detalle">
+            <label>Total de visitas:</label>
+            <input type="number" value="{{ $clientes->total_visitas }}" readonly>
+        </div>
+
+    </div>
+
+    <div class="acciones-detalle">
+        <a href="{{ route('clientes.index') }}" class="btn-regresar">
+            <i class="fa-solid fa-arrow-left"></i>
+            Regresar
+        </a>
+
+        <a href="{{ route('clientes.edit', $clientes->id) }}" class="btn-guardar">
+            <i class="fa-solid fa-pen-to-square"></i>
+            Editar
+        </a>
+    </div>
+
+</div>
+
+@endsection

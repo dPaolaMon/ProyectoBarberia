@@ -1,74 +1,109 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-	  <h1>Nuevo Empleado</h1>
+@extends('layouts.app')
 
-	  {{-- Validacion de errores (if) --}}
-	  @if($errors->any())
-		<div style="color:red;">
-			<ul>
-			@foreach ($errors->all() as $error)
-			
-			<li>{{ $error }}</li>
-			
-			@endforeach
-			</ul>
-		</div>
-	  @endif 
-	  
-	<form method="POST" action="{{ route('empleados.store') }}">
-	@csrf
-		<label>Nombre:</label>
-		<input type="text" name="nombre" required><br>
-		
-		<label>Apellidos:</label>
-		<input type="text" name="apellido" required><br>
+@section('titulo', 'Nuevo empleado')
 
-		<label>Edad:</label>
-		<input type="number" name="edad" required><br>
+@section('contenido')
 
-		<label>Fecha de Nacimiento:</label>
-		<input type="date" name="fecha_nac" required><br>
+<div class="form-container">
 
-		<label>Telefono:</label>
-		<input type="number" name="telefono" required><br>
+    <h1 class="titulo-seccion">
+        <i class="fa-solid fa-user-plus"></i>
+        Nuevo Empleado
+    </h1>
 
-		<hr> <h3>Dirección</h3>
+    {{-- ERRORES --}}
+    @if($errors->any())
+        <div class="alerta-errores">
+            <ul>
+                @foreach($errors->all() as $error)
+                <li>⚠️ {{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
-		<label>Calle:</label>
-		<input type="text" name="calle" required><br>
+    <form method="POST" action="{{ route('empleados.store') }}" class="astro-form">
+        @csrf
 
-		<label>Manzana (Mz):</label>
-		<input type="number" name="mz" required><br>
+        <div class="grupo-form">
+            <label><i class="fa-solid fa-user"></i> Nombre:</label>
+            <input type="text" name="nombre" required>
+        </div>
 
-		<label>Lote (Lt):</label>
-		<input type="number" name="lt" required><br>
+        <div class="grupo-form">
+            <label><i class="fa-solid fa-user-tag"></i> Apellidos:</label>
+            <input type="text" name="apellido" required>
+        </div>
 
-		<label>Municipio:</label>
-		<input type="text" name="municipio" required><br>
+        <div class="grupo-form">
+            <label><i class="fa-solid fa-hourglass-half"></i> Edad:</label>
+            <input type="number" name="edad" required>
+        </div>
 
-		<label>Estado:</label>
-		{{-- <input type="text" name="estado" required> --}}
-		<select name="estado" multiple>
-		  <option value="Ciudad de Mexico">Ciudad de Mexico</option>
-		  <option value="Estado de Mexico">Estado de Mexico</option>
-		  <option value="Puebla">Puebla</option>
-		</select><br>
+        <div class="grupo-form">
+            <label><i class="fa-solid fa-cake-candles"></i> Fecha de Nacimiento:</label>
+            <input type="date" name="fecha_nac" required>
+        </div>
 
-		<label>Código Postal:</label>
-		<input type="number" name="cp" required><br>		
+        <div class="grupo-form">
+            <label><i class="fa-solid fa-phone"></i> Teléfono:</label>
+            <input type="number" name="telefono" required>
+        </div>
 
-		
-	<button type="submit">Guardar</button>
-	<a href="{{ route('empleados.index') }}">Regresar</a>
-	</form>
-	
-    <header></header>
-    <main></main>
-    <footer></footer>
-  </body>
-</html>
+        <hr class="separador">
+
+        <h3 class="subtitulo">
+            <i class="fa-solid fa-location-dot"></i> Dirección
+        </h3>
+
+        <div class="grupo-form">
+            <label><i class="fa-solid fa-road"></i> Calle:</label>
+            <input type="text" name="calle" required>
+        </div>
+
+        <div class="grupo-form">
+            <label><i class="fa-solid fa-square"></i> Mz:</label>
+            <input type="number" name="mz" required>
+        </div>
+
+        <div class="grupo-form">
+            <label><i class="fa-solid fa-square-full"></i> Lt:</label>
+            <input type="number" name="lt" required>
+        </div>
+
+        <div class="grupo-form">
+            <label><i class="fa-solid fa-city"></i> Municipio:</label>
+            <input type="text" name="municipio" required>
+        </div>
+
+        <div class="grupo-form">
+            <label><i class="fa-solid fa-flag"></i> Estado:</label>
+            <select name="estado" required>
+                <option value="Ciudad de México">Ciudad de México</option>
+                <option value="Estado de México">Estado de México</option>
+                <option value="Puebla">Puebla</option>
+            </select>
+        </div>
+
+        <div class="grupo-form">
+            <label><i class="fa-solid fa-envelope"></i> Código Postal:</label>
+            <input type="number" name="cp" required>
+        </div>
+
+        <div class="acciones-form">
+            <a href="{{ route('empleados.index') }}" class="btn-regresar">
+                <i class="fa-solid fa-arrow-left"></i>
+                Regresar
+            </a>
+
+            <button class="btn-guardar" type="submit">
+                <i class="fa-solid fa-floppy-disk"></i>
+                Guardar
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+@endsection

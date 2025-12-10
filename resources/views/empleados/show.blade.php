@@ -1,56 +1,85 @@
-<!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="utf-8">
-    <title>@yield('titulo', 'AstroCuts')</title>
-  </head>
-  <body>
-	<header></header>
-    <main>
-	  <h1>Datos del emplead@: {{ $empleados->nombre }}</h1>
-	  <h3>Datos generales</h3>
-		<p><strong>ID:</strong></p>
-		<input value ="{{ $empleados->id }}" readonly>
-		
-		<p><strong>Nombre:</strong></p>
-		<input value ="{{ $empleados->nombre }}" readonly>
-		 
-		<p><strong>Apellidos:</strong></p>
-		<input value ="{{ $empleados->apellido }}" readonly>
-		
-		<p><strong>Edad:</strong></p>
-		<input value ="{{ $empleados->edad }}" readonly>
+@extends('layouts.app')
 
-		<p><strong>Fecha de nacimiento:</strong></p>
-		<input value ="{{ $empleados->fecha_nac }}" readonly>
+@section('titulo', 'Empleado: ' . $empleados->nombre)
 
-		<p><strong>Telefono:</strong></p>
-		<input value ="{{ $empleados->telefono }}" readonly>
+@section('contenido')
 
-	  <hr> <h3>Direccion</h3>
+<div class="glass-card">
 
-		<p><strong>Calle:</strong></p>
-		<input value ="{{ $empleados->calle }}" readonly>
+    <h1 class="titulo-seccion">
+        <i class="fa-solid fa-id-card-clip"></i>
+        Datos del Empleado: {{ $empleados->nombre }}
+    </h1>
 
-		<p><strong>Mz:</strong></p>
-		<input value ="{{ $empleados->mz }}" readonly>
+    {{-- DATOS GENERALES --}}
+    <h3 class="subtitulo">
+        <i class="fa-solid fa-user"></i>
+        Datos Generales
+    </h3>
 
-		<p><strong>Lt:</strong></p>
-		<input value ="{{ $empleados->lt }}" readonly>
+    <div class="detalle-cliente">
+        
+        <div class="campo-detalle">
+            <label>ID:</label>
+            <input value="{{ $empleados->id }}" readonly>
+        </div>
 
-		<p><strong>Entidad:</strong></p>
-		<input value ="{{ $empleados->municipio }}" readonly>
+        <div class="campo-detalle">
+            <label>Nombre:</label>
+            <input value="{{ $empleados->nombre }}" readonly>
+        </div>
 
-		<p><strong>Estado:</strong></p>
-		<input value ="{{ $empleados->estado }}" readonly>
+        <div class="campo-detalle">
+            <label>Apellidos:</label>
+            <input value="{{ $empleados->apellido }}" readonly>
+        </div>
 
-		<p><strong>Código Postal:</strong></p>
-		<input value ="{{ $empleados->cp }}" readonly> 
+        <div class="campo-detalle">
+            <label>Edad:</label>
+            <input value="{{ $empleados->edad }}" readonly>
+        </div>
 
-		
+        <div class="campo-detalle">
+            <label>Fecha de Nacimiento:</label>
+            <input value="{{ $empleados->fecha_nac }}" readonly>
+        </div>
 
-		<br><a href="{{ route('empleados.index') }}">Volver</a>
-    </main>
-    <footer></footer>
-  </body>
-</html>
+        <div class="campo-detalle">
+            <label>Teléfono:</label>
+            <input value="{{ $empleados->telefono }}" readonly>
+        </div>
+    </div>
+
+    <hr class="separador">
+
+    {{-- DIRECCIÓN --}}
+    <h3 class="subtitulo">
+        <i class="fa-solid fa-location-dot"></i>
+        Dirección
+    </h3>
+
+    <div class="detalle-cliente">
+
+        <div class="campo-detalle">
+            <label>Calle:</label>
+            <input value="{{ $empleados->calle }}" readonly>
+        </div>
+
+        <div class="campo-detalle">
+            <label>Mz:</label>
+            <input value="{{ $empleados->mz }}" readonly>
+        </div>
+
+        <div class="campo-detalle">
+            <label>Lt:</label>
+            <input value="{{ $empleados->lt }}" readonly>
+        </div>
+
+        <div class="campo-detalle">
+            <label>Municipio:</label>
+            <input value="{{ $empleados->municipio }}" readonly>
+        </div>
+
+        <div class="campo-detalle">
+            <label>Estado:</label>
+            <i

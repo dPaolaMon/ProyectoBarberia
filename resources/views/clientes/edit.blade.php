@@ -1,38 +1,55 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <title>@yield('titulo', 'AstroCuts')</title>
-  </head>
-  <body>
-	  <header></header>
-		<h1>Editar Cliente {{ $clientes->nombre }}</h1>
-	  <main>
-	
-	<form method="POST" action="{{ route('clientes.update', $clientes->id) }}">
-	@csrf
-	@method('PUT')
-		<label>Nombre:</label>
-		<input type="text" name="nombre" value="{{ $clientes->nombre }}" required><br>
+@extends('layouts.app')
 
-		<label>Apellidos:</label>
-		<input type="text" name="apellido" value="{{ $clientes-> apellido }}" required><br>
+@section('titulo', 'Editar Cliente')
 
-		<label>Fecha de Nacimiento:</label>
-		<input type="date" max="2010-12-07" min="1940-01-01" name="fecha_nac" value="{{ $clientes->fecha_nac }}" required><br>
+@section('contenido')
 
-		<label>Teléfono:</label>
-		<input type="number" name="telefono" value="{{ $clientes->telefono }}" required><br>
-		{{-- SE ELIMINA PARA QUE SE ALMACENE EN LA TABLA USERS
-		<label>Correo Electronico:</label>
-		<input type="email" name="correo" value="{{ $clientes->correo }}" required><br>	--}}		
+<div class="glass-card">
 
+    <h1 class="titulo-seccion">
+        <i class="fa-solid fa-user-pen"></i>
+        Editar Cliente: {{ $clientes->nombre }}
+    </h1>
 
-		<button type="submit">Actualizar</button>
-	</form>
-		<a href="{{ route('clientes.index') }}">Regresar</a>
+    <form method="POST" action="{{ route('clientes.update', $clientes->id) }}" class="formulario">
+        @csrf
+        @method('PUT')
 
-    </main>
-    <footer></footer>
-  </body>
-</html>
+        <div class="input-group">
+            <label>Nombre:</label>
+            <input type="text" name="nombre" value="{{ $clientes->nombre }}" required>
+        </div>
+
+        <div class="input-group">
+            <label>Apellidos:</label>
+            <input type="text" name="apellido" value="{{ $clientes->apellido }}" required>
+        </div>
+
+        <div class="input-row">
+            <div class="input-group">
+                <label>Fecha de Nacimiento:</label>
+                <input type="date" name="fecha_nac" value="{{ $clientes->fecha_nac }}" min="1940-01-01" max="2010-12-07" required>
+            </div>
+
+            <div class="input-group">
+                <label>Teléfono:</label>
+                <input type="text" name="telefono" maxlength="10" value="{{ $clientes->telefono }}" required>
+            </div>
+        </div>
+
+        <div class="acciones-detalle">
+            <button type="submit" class="btn-guardar">
+                <i class="fa-solid fa-floppy-disk"></i>
+                Actualizar
+            </button>
+
+            <a href="{{ route('clientes.index') }}" class="btn-regresar">
+                <i class="fa-solid fa-arrow-left"></i>
+                Regresar
+            </a>
+        </div>
+
+    </form>
+</div>
+
+@endsection

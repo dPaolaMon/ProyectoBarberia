@@ -1,0 +1,748 @@
+/* ============================
+   PALETA DE COLORES ASTROCUTS
+   ============================ */
+:root {
+    --emerald-green: #284139;
+    --wasabi: #809076;
+    --creased-khaki: #F8D794;
+    --egyptian-earth: #B86830;
+    --noir: #111A19;
+}
+
+/* ============================
+   BASE GLOBAL
+   ============================ */
+body.fondo-app {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    background: var(--noir);
+    color: var(--creased-khaki);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+    /* Fondo estilo blur como tu referencia */
+body.fondo-app {
+    background-image: url('/img/image-inicio.jpeg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+}
+
+
+/* ============================
+   CONTENEDOR PRINCIPAL
+   ============================ */
+.contenedor-form {
+    background: var(--emerald-green);
+    padding: 30px;
+    width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    border: 1px solid rgba(248, 215, 148, 0.2);
+}
+
+/* ============================
+   TÍTULO
+   ============================ */
+.titulo-form {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--creased-khaki);
+}
+
+/* ============================
+   FORMULARIO
+   ============================ */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 15px;
+    color: var(--creased-khaki);
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background: var(--wasabi);
+    color: var(--noir);
+    font-size: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+.input-group input:focus {
+    border-color: var(--creased-khaki);
+    outline: none;
+    background: #90a68a;
+}
+
+.input-row {
+    display: flex;
+    gap: 12px;
+}
+
+/* ============================
+   BOTONES
+   ============================ */
+.acciones {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-guardar {
+    background: var(--egyptian-earth);
+    color: var(--noir);
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.btn-guardar:hover {
+    background: #d87a36;
+    transform: scale(1.05);
+}
+
+.btn-regresar {
+    color: var(--creased-khaki);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-regresar:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* ============================
+   TABLAS (Para index.blade.php)
+   ============================ */
+.table-contenedor {
+    background: var(--emerald-green);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--creased-khaki);
+}
+
+th {
+    background: var(--noir);
+    padding: 12px;
+    font-weight: 700;
+}
+
+td {
+    padding: 10px;
+    background: var(--wasabi);
+    color: var(--noir);
+    border-bottom: 2px solid var(--emerald-green);
+}
+
+tr:hover td {
+    background: #90a68a;
+}
+
+/* ============================
+   BOTÓN DE ACCIONES INDEX
+   ============================ */
+.btn-accion {
+    background: var(--egyptian-earth);
+    color: var(--noir);
+    padding: 6px 10px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.btn-accion:hover {
+    background: #d87a36;
+    transform: scale(1.05);
+}
+
+/* ============================
+   ESTILO PARA TITULOS DE LISTAS
+   ============================ */
+.titulo-lista {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ============================
+   TARJETA TIPO GLASS (Crear Cliente)
+   ============================ */
+
+.glass-card {
+    background: rgba(0, 0, 0, 0.45); /* Transparencia oscura */
+    padding: 40px;
+    width: 60%;
+    max-width: 650px;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-card h1 {
+    text-align: center;
+    color: var(--creased-khaki);
+    margin-bottom: 25px;
+}
+.glass-card {
+    width: 80%;              /* Ocupa más espacio de la pantalla */
+    max-width: 1000px;       /* No se va a hacer gigante en pantallas grandes */
+    margin: 70px auto;       /* Centrado */
+    padding: 40px 50px;      /* Más espacio interno */
+    border-radius: 20px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;    /* Más espacio entre cada sección */
+}
+
+.input-row {
+    display: flex;
+    gap: 25px;     /* Más separación */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group input {
+    padding: 14px 16px;
+    font-size: 1.15rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(120, 150, 130, 0.45);
+}
+
+
+/* ======================================================
+   NAVBAR ASTROCUTS
+   ====================================================== */
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 40px;
+
+    /* Fondo transparente con blur */
+    background: rgba(17, 26, 25, 0.75);
+    backdrop-filter: blur(8px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    z-index: 2000;
+}
+
+/* LOGO + TEXTO */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.site-logo {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--creased-khaki);
+}
+
+.site-title {
+    color: var(--creased-khaki);
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* NAV */
+.main-nav {
+    display: flex;
+}
+
+.nav-list {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item .nav-link {
+    color: var(--creased-khaki);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: .3s ease-in-out;
+}
+
+.nav-item .nav-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* BOTÓN DEL REGISTRO */
+.nav-button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: var(--egyptian-earth);
+    color: var(--noir) !important;
+    transition: .3s;
+}
+
+.nav-button:hover {
+    background: #d87a36;
+    transform: scale(1.05);
+}
+
+/* ESPACIO PARA QUE EL CONTENIDO NO SE TAPE */
+main {
+    margin-top: 100px;
+}
+
+.main-header {
+    width: 100%;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.75);
+    border-bottom: 1px solid #c59d5f; /* dorado */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    backdrop-filter: blur(6px);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.site-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 6px #c59d5f);
+}
+
+.brand-title {
+    color: #E8D4A7;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px #000;
+}
+
+.main-nav .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-item .nav-link {
+    color: #E8D4A7;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+}
+
+.nav-item .nav-link:hover {
+    color: #c59d5f; /* dorado */
+    text-shadow: 0 0 8px #c59d5f;
+    transform: translateY(-2px);
+}
+
+.nav-link i {
+    font-size: 1.2rem;
+}
+/*CLIENTES*/
+/*create.blade.php*/
+.input-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.input-row .input-group {
+    flex: 1; /* Cada campo toma el mismo espacio */
+}
+
+.input-row .input-group:nth-child(1) {
+    flex: 1.2; /* Fecha un poco más corta */
+}
+
+.input-row .input-group:nth-child(2) {
+    flex: 1.5; /* Teléfono más largo */
+}
+
+.input-row .input-group:nth-child(3) {
+    flex: 1.5; /* Correo igual práctico */
+}
+
+/* Evitar que los inputs se expandan demasiado */
+.input-group input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Contenedor para icono + input */
+.input-with-icon {
+    position: relative;
+    width: 100%;
+}
+
+/* Icono */
+.email-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #E8D4A7; /* dorado suave */
+    pointer-events: none;
+}
+
+/* Input del correo con espacio para el icono */
+.input-with-icon input {
+    padding-left: 45px;  /* espacio para el ícono */
+}
+
+/*Index.blade.php*/
+
+.glass-card {
+    width: 85%;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 35px 40px;
+}
+.titulo-seccion {
+    font-size: 2rem;
+    color: #E8D4A7;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subtitulo {
+    color: #E8D4A7;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-registrar {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #3f7972;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: .3s;
+}
+.btn-registrar:hover {
+    background-color: #25524c;
+}
+.form-busqueda {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.separador {
+    border: none;
+    border-bottom: 1px solid #E8D4A7;
+    margin: 20px 0;
+}
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+.tabla-estilo {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+    backdrop-filter: blur(4px);
+}
+
+.tabla-estilo th,
+.tabla-estilo td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #666;
+    text-align: center;
+}
+
+.tabla-estilo th {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #E8D4A7;
+}
+.accion {
+    color: #E8D4A7;
+    font-size: 1.3rem;
+    transition: .3s;
+}
+
+.accion:hover {
+    color: #c59d5f;
+}
+
+.eliminar:hover {
+    color: #ff6b6b;
+}
+
+/*Show.blade.php*/
+
+.detalle-cliente {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.campo-detalle {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-detalle input {
+    padding: 12px 14px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(120, 150, 130, 0.45);
+    color: #fff;
+}
+
+.acciones-detalle {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn-regresar,
+.btn-guardar {
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: .3s;
+}
+
+.btn-regresar {
+    background-color: #6c757d;
+}
+
+.btn-regresar:hover {
+    background-color: #545b62;
+}
+
+.btn-guardar {
+    background-color: #3f7972;
+}
+
+.btn-guardar:hover {
+    background-color: #25524c;
+}
+
+/*Edit.blade.php*/
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-row {
+    display: flex;
+    gap: 20px;
+}
+
+.input-group input {
+    padding: 12px 14px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(120, 150, 130, 0.45);
+    color: #fff;
+}
+
+.acciones-detalle {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.btn-guardar,
+.btn-regresar {
+    padding: 10px 18px;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: .3s;
+}
+
+.btn-guardar {
+    background-color: #3f7972;
+}
+
+.btn-guardar:hover {
+    background-color: #25524c;
+}
+
+.btn-regresar {
+    background-color: #6c757d;
+}
+
+.btn-regresar:hover {
+    background-color: #545b62;
+}
+
+/*EMPLEADOS*/
+/*Create.blade.php*/
+.select-estado {
+    padding: 12px 14px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    background-color: rgba(120,150,130,0.45);
+    color: #fff;
+    border: none;
+}
+
+/*Index.blade.php*/
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+.tabla-estilo {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+}
+
+.tabla-estilo th,
+.tabla-estilo td {
+    padding: 12px;
+    border-bottom: 1px solid #666;
+    text-align: center;
+}
+
+.tabla-estilo th {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #E8D4A7;
+}
+.accion {
+    color: #E8D4A7;
+    font-size: 1.3rem;
+    transition: .3s;
+}
+
+.accion:hover {
+    color: #c59d5f;
+}
+
+.eliminar:hover {
+    color: #ff6b6b;
+}
+.btn-registrar {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #3f7972;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.btn-registrar:hover {
+    background-color: #25524c;
+}
+
+/*Show.blade.php*/
+.detalle-cliente {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.campo-detalle {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-detalle input {
+    padding: 12px 14px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    background-color: rgba(120,150,130,0.45);
+    color: #fff;
+    border: none;
+}
+
+.separador {
+    border: none;
+    border-bottom: 1px solid #E8D4A7;
+    margin: 25px 0;
+}
+
+.acciones-detalle {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+}

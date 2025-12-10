@@ -1,55 +1,36 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <title>@yield('titulo', 'AstroCuts')</title>
-  </head>
-  <body>
-	  <header></header>
-		<h1>Editar Empleado</h1>
-	  <main>
-	
-	<form method="POST" action="{{ route('empleados.update', $empleados->id) }}">
-	@csrf
-	@method('PUT')
-		<label>Nombre:</label>
-		<input type="text" name="nombre" value="{{ $empleados->nombre }}" required><br>
+@extends('layouts.app')
 
-		<label>Apellidos:</label>
-		<input type="text" name="apellido" value="{{ $empleados-> apellido }}" required><br>
-		
-		<label>Edad:</label>
-		<input type="number" name="edad" value="{{ $empleados->edad }}" required><br>
+@section('titulo', 'Editar empleado: ' . $empleados->nombre)
 
-		<label>Fecha de Nacimiento:</label>
-		<input type="date" name="fecha_nac" value="{{ $empleados->fecha_nac }}" required><br>
+@section('contenido')
 
-		<label>Teléfono:</label>
-		<input type="number" name="telefono" value="{{ $empleados->telefono }}" required><br>
+<div class="form-container">
+    <h1 class="titulo-seccion">
+        <i class="fa-solid fa-user-pen"></i>
+        Editar Empleado
+    </h1>
 
-		<label>Calle:</label>
-		<input type="text" name="calle" value="{{ $empleados-> calle }}" required><br>
+    {{-- VALIDACIÓN DE ERRORES --}}
+    @if ($errors->any())
+        <div class="alerta-errores">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>⚠️ {{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
-		<label>Mz:</label>
-		<input type="number" name="mz" value="{{ $empleados->mz }}" required><br>
+    <form action="{{ route('empleados.update', $empleados->id) }}" method="POST" class="astro-form">
+        @csrf
+        @method('PUT')
 
-		<label>Lt:</label>
-		<input type="number" name="lt" value="{{ $empleados->lt }}" required><br>
+        <div class="grupo-form">
+            <label><i class="fa-solid fa-user"></i> Nombre:</label>
+            <input type="text" name="nombre" value="{{ $empleados->nombre }}" required>
+        </div>
 
-		<label>Entidad:</label>
-		<input type="text" name="municipio" value="{{ $empleados->municipio }}" required><br>
-
-		<label>Estado:</label>
-		<input type="text" name="estado" value="{{ $empleados->estado }}" required><br>
-
-		<label>Código Postal:</label>
-		<input type="number" name="cp" value="{{ $empleados->cp }}" required><br>
-
-		<button type="submit">Actualizar</button>
-	</form>
-		<a href="{{ route('empleados.index') }}">Regresar</a>
-
-    </main>
-    <footer></footer>
-  </body>
-</html>
+        <div class="grupo-form">
+            <label><i class="fa-solid fa-user-tag"></i> Apellidos:</label>
+            <input type="text" name="apellido" value="{{ $empleados->apellido }}" required>
+        </div>
