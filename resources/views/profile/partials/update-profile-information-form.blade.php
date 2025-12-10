@@ -1,64 +1,128 @@
-<section>
-    <header>
-        <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Profile Information') }}
-        </h2>
+<section class="perfil-section">
 
-        <p class="mt-1 text-sm text-gray-600">
-            {{ __("Update your account's profile information and email address.") }}
+    <header>
+        <h2>{{ __('Información del Perfil') }}</h2>
+
+        <p class="descripcion">
+            {{ __("Actualiza tu información personal y tu correo electrónico.") }}
         </p>
     </header>
 
+    <style>
+    /* ======== ESTILO GENERAL ======== */
+    .perfil-section {
+        background: rgba(255, 255, 255, 0.12);
+        padding: 30px;
+        margin: 40px auto;
+        width: 600px;
+        border-radius: 18px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.30);
+        color: #F7F7F7;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* ======== TÍTULO ======== */
+    .perfil-section h2 {
+        font-size: 26px;
+        font-weight: 700;
+        color: #E8D4A7; /* Khaki */
+        margin-bottom: 10px;
+    }
+
+    /* ======== DESCRIPCIÓN ======== */
+    .perfil-section .descripcion {
+        color: #d9cba4;
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    /* ======== LABELS ======== */
+    .perfil-section label {
+        color: #F8D794;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    /* ======== INPUTS ======== */
+    .perfil-section input[type="text"],
+    .perfil-section input[type="email"],
+    .perfil-section input[type="password"] {
+        background: rgba(0,0,0,0.25);
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.25);
+        border-radius: 10px;
+        padding: 10px;
+        width: 100%;
+        margin-top: 6px;
+        margin-bottom: 15px;
+    }
+
+    .perfil-section input:focus {
+        outline: none;
+        border-color: #E8D4A7;
+        box-shadow: 0 0 6px #E8D4A7;
+    }
+
+    /* ======== BOTÓN ======== */
+    .perfil-section button {
+        background: #8B4F2E; /* madera */
+        padding: 10px 20px;
+        border-radius: 12px;
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .perfil-section button:hover {
+        background: #B85A33;
+        transform: scale(1.05);
+    }
+    </style>
+
+    {{-- FORMULARIO DE VERIFICACIÓN --}}
     <form id="send-verification" method="post" action="{{ route('verification.send') }}">
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    {{-- FORMULARIO PRINCIPAL --}}
+    <form method="post" action="{{ route('profile.update') }}">
         @csrf
         @method('patch')
 
         <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
+            <x-input-label for="name" :value="__('Nombre')" />
+            <x-text-input id="name" name="name" type="text"
+                :value="old('name', $user->name)" required autofocus />
+            <x-input-error :messages="$errors->get('name')" />
         </div>
 
         <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
-            <x-input-error class="mt-2" :messages="$errors->get('email')" />
+            <x-input-label for="email" :value="__('Correo')" />
+            <x-text-input id="email" name="email" type="email"
+                :value="old('email', $user->email)" required />
+            <x-input-error :messages="$errors->get('email')" />
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
-                <div>
-                    <p class="text-sm mt-2 text-gray-800">
-                        {{ __('Your email address is unverified.') }}
+                <p class="text-sm mt-2 text-red-300">
+                    {{ __('Tu correo aún no está verificado.') }}
 
-                        <button form="send-verification" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            {{ __('Click here to re-send the verification email.') }}
-                        </button>
-                    </p>
-
-                    @if (session('status') === 'verification-link-sent')
-                        <p class="mt-2 font-medium text-sm text-green-600">
-                            {{ __('A new verification link has been sent to your email address.') }}
-                        </p>
-                    @endif
-                </div>
+                    <button form="send-verification" class="underline text-sm">
+                        {{ __('Reenviar correo de verificación') }}
+                    </button>
+                </p>
             @endif
         </div>
 
-        <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+        <div style="margin-top: 20px;">
+            <button type="submit">{{ __('Guardar Cambios') }}</button>
 
             @if (session('status') === 'profile-updated')
-                <p
-                    x-data="{ show: true }"
-                    x-show="show"
-                    x-transition
-                    x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-600"
-                >{{ __('Saved.') }}</p>
+                <span class="ml-3 text-green-300">{{ __('Guardado.') }}</span>
             @endif
         </div>
     </form>
+
 </section>
