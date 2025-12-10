@@ -18,7 +18,7 @@
         </a>
     </div>
 
-    {{-- --- Form para buscar ---
+    {{-- --- Form para buscar ---}}
     <hr class="separador">
     
     <h3 class="subtitulo"><i class="fas fa-search"></i> Filtrar Citas</h3>

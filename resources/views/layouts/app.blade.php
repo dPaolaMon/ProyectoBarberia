@@ -17,16 +17,24 @@
     <!-- Tus estilos -->
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 </head>
-
 <body class="fondo-app min-h-screen">
 
-    <!-- NAV SUPERIOR -->
     @include('layouts.navigation')
 
-    <!-- CONTENIDO PRINCIPAL (slot de Jetstream) -->
-    <div class="min-h-screen">
-        {{ $slot }}
-    </div>
+    {{-- 1. CABECERA CON TÍTULO (Mapea a @section('header')) --}}
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            {{-- RECIBE EL CONTENIDO DEL TÍTULO --}}
+            @yield('header') 
+        </div>
+    </header>
+
+    {{-- 2. CONTENIDO PRINCIPAL (Mapea a @section('contenido')) --}}
+    <main class="min-h-screen">
+        {{-- RECIBE TODO EL CONTENIDO DE LA PÁGINA --}}
+        @yield('contenido')
+    </main>
 
 </body>
+</html>
 </html>
