@@ -1,0 +1,220 @@
+/* ==========================
+   CONFIGURACIÓN BASE
+   ========================== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --verde-pared: #2F5A55;
+    --madera: #8B4F2E;
+    --khaki: #E8D4A7;
+    --cuero: #B85A33;
+    --negro-profundo: #0F1614;
+
+    --blur-bg: rgba(0, 0, 0, 0.45);
+    --blur-card: rgba(18, 32, 31, 0.70);
+    --radius: 14px;
+    --trans: 0.25s ease-in-out;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Inter', sans-serif;
+    color: var(--khaki);
+}
+
+/* ==========================
+   FONDO BORROSO GLOBAL
+   ========================== */
+
+.fondo-borroso {
+    background: url('../img/image-inicio.jpeg') center/cover no-repeat fixed;
+    backdrop-filter: blur(8px);
+    min-height: 100vh;
+}
+
+/* ==========================
+   MENÚ SUPERIOR
+   ========================== */
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background: rgba(15, 22, 20, 0.85);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    z-index: 999;
+}
+
+.logo-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--khaki);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.menu li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--khaki);
+    transition: var(--trans);
+}
+
+.menu li a:hover {
+    color: var(--cuero);
+}
+
+/* Para evitar que el contenido se esconda detrás del menú */
+.contenido-principal {
+    padding-top: 80px;
+}
+
+/* ==========================
+   TARJETAS (FORMULARIOS)
+   ========================== */
+
+.card-form {
+    background: var(--blur-card);
+    padding: 35px;
+    width: 600px;
+    margin: auto;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    border: 1px solid rgba(232, 212, 167, 0.15);
+}
+
+.card-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--khaki);
+}
+
+/* ==========================
+   INPUTS
+   ========================== */
+
+.input-group label,
+.input-row label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    background: rgba(232, 212, 167, 0.25);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--khaki);
+    outline: none;
+    border-radius: 8px;
+    transition: var(--trans);
+}
+
+input:focus {
+    background: rgba(232, 212, 167, 0.35);
+    border-color: var(--cuero);
+}
+
+/* ==========================
+   BOTONES
+   ========================== */
+
+.btn-primary {
+    background: var(--cuero);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--trans);
+}
+
+.btn-primary:hover {
+    background: #a44b2a;
+}
+
+.btn-link {
+    margin-left: 10px;
+    color: var(--khaki);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--trans);
+}
+
+.btn-link:hover {
+    color: var(--cuero);
+}
+
+/* ==========================
+   FOOTER
+   ========================== */
+
+.footer {
+    margin-top: 50px;
+    background: rgba(15, 22, 20, 0.85);
+    padding: 25px;
+    text-align: center;
+    color: var(--khaki);
+}
+/* ===== TABLAS ===== */
+
+.th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: var(--khaki);
+}
+
+.td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.fila-tabla:hover {
+    background: rgba(232, 212, 167, 0.08);
+    transition: 0.2s;
+}
+
+
+/* ==========================
+   RESPONSIVE
+   ========================== */
+
+@media (max-width: 768px) {
+
+    .card-form {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .menu {
+        gap: 10px;
+        font-size: 14px;
+    }
+}
+

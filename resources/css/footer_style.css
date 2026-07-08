@@ -1,0 +1,85 @@
+/* ---------------------------------- */
+/* ESTILOS PARA EL FOOTER DE ASTROCUTS */
+/* ---------------------------------- */
+/* Paleta de Colores (Referencia) */
+:root {
+    --verde-pared: #2F5A55;
+    --madera: #8B4F2E;
+    --khaki: #E8D4A7; /* Acento Principal */
+    --cuero: #B85A33;
+    --negro-profundo: #0F1614;
+    --gris-claro: #f4f4f4;
+    --texto-footer: #c4c4c4; /* Tono de gris suave */
+}
+
+/* ---------------------------------- */
+/* 1. Contenedor Principal (Footer) */
+/* ---------------------------------- */
+.main-footer {
+    /* Distribución: Contacto a la izquierda, Legal a la derecha */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinea el contenido al inicio de cada bloque */
+    
+    /* Diseño: Coherencia con el negro profundo */
+    padding: 35px 40px;
+    background-color: var(--negro-profundo); 
+    color: var(--texto-footer); 
+    font-size: 0.95rem;
+    
+    /* Borde superior de acento */
+    border-top: 1px solid var(--verde-pared); 
+}
+
+/* ---------------------------------- */
+/* 2. Estilos de Sección y Títulos */
+/* ---------------------------------- */
+.footer-section {
+    width: 48%; /* Da espacio a ambos lados */
+    line-height: 1.6;
+}
+
+.footer-section h3 {
+    color: var(--khaki); /* Títulos en color de acento */
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    /* Subrayado con el color de la madera para un look temático */
+    border-bottom: 2px solid var(--madera); 
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* ---------------------------------- */
+/* 3. Información de Contacto */
+/* ---------------------------------- */
+.contact-info p {
+    margin: 5px 0;
+}
+
+/* ---------------------------------- */
+/* 4. Enlace Legal y Copyright */
+/* ---------------------------------- */
+.legal-copy {
+    /* Alinea el contenido legal a la derecha del footer */
+    text-align: right; 
+}
+
+.copyright {
+    color: var(--texto-footer); 
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+}
+
+.legal-copy a {
+    /* Estilo del enlace 'Página principal' */
+    color: var(--gris-claro); 
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.legal-copy a:hover {
+    color: var(--khaki); /* Acento al pasar el cursor */
+    text-decoration: underline;
+}

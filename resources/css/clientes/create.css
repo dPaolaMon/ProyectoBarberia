@@ -1,0 +1,229 @@
+/* Paleta de Colores - Bloque de variables limpio */
+:root {
+    --verde-pared: #2F5A55;
+    --madera: #8B4F2E;
+    --khaki: #E8D4A7;
+    --cuero: #B85A33;
+    --negro-profundo: #0F1614;
+    --gris-claro: #f4f4f4;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ---------------------------------------------------------------------- */
+/* LAYOUT PRINCIPAL Y FONDO */
+/* ---------------------------------------------------------------------- */
+
+body {
+    padding: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+
+    /* Centrado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    
+    /* Fondo simulado de la barbería */
+    background-image: url("https://placehold.co/1920x1080/0F1614/E8D4A7?text=Fondo+Barberia+Borrosa");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(8px);
+    background-color: var(--negro-profundo); /* Fallback si la imagen no carga */
+}
+
+/* ---------------------------------------------------- */
+/* ESTILOS DEL CONTENEDOR TIPO "VENTANA EMERGENTE" */
+/* ---------------------------------------------------- */
+
+/* Estilo para el contenedor principal del formulario (simula la ventana modal) */
+form {
+    background-color: var(--verde-pared);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); 
+    width: 90%;
+    max-width: 600px; 
+    
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+h1 {
+    color: var(--khaki);
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px var(--negro-profundo);
+}
+
+/* ---------------------------------------------------- */
+/* CONTENIDO INTERNO DEL FORMULARIO */
+/* ---------------------------------------------------- */
+
+/* Contenedor del perfil derecho (contiene los inputs principales) */
+.perfil-derecha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; 
+    margin-bottom: 15px;
+}
+
+/* Grupos Nombre / Apellidos */
+.perfil-derecha .input-group {
+    flex-basis: calc(50% - 7.5px); 
+    flex-direction: column; 
+    align-items: flex-start;
+    margin-bottom: 0; 
+}
+
+/* Ocultamos el div vacío en el HTML que se usaba para limpiar flotadores */
+.perfil-derecha > div[style] {
+    display: none; 
+}
+
+
+/* Grupos de 3 elementos (Fecha, Teléfono, Correo) */
+.input-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; 
+    margin-bottom: 15px;
+    width: 100%;
+    
+    padding: 10px 0;
+    border-top: 1px solid rgba(232, 212, 167, 0.2); 
+}
+
+/* Estilos de las Etiquetas (Labels) */
+.input-group label,
+.input-row label {
+    color: var(--khaki);
+    font-weight: 600;
+    margin-bottom: 5px; 
+    min-width: unset; 
+    width: 100%; 
+    font-size: 0.9em;
+}
+
+/* Estilos de los Inputs (Texto, Fecha, Email) */
+.perfil-derecha input,
+.input-row input {
+    padding: 10px; 
+    border-radius: 8px; 
+    border: none; 
+    background-color: var(--gris-claro); 
+    color: var(--negro-profundo);
+    margin-right: 0; 
+    font-size: 1em;
+    flex-grow: 1; 
+}
+
+/* Ajuste específico para input-row */
+.input-row > * {
+    flex-basis: calc(33.33% - 10px); 
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------------------------------------------------- */
+/* BOTONES Y ENLACE DE REGRESO */
+/* ---------------------------------------------------- */
+
+.input-row-final {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(232, 212, 167, 0.2);
+}
+
+.guardar-btn {
+    background: var(--cuero);
+    color: white;
+    border: none;
+    padding: 12px 30px; 
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background 0.2s;
+}
+
+.guardar-btn:hover {
+    background: var(--madera);
+}
+
+form > a {
+    color: var(--khaki);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    transition: color 0.2s;
+}
+
+form > a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------------- */
+/* AJUSTE DEL ENLACE DE REGRESO */
+/* ---------------------------------------------------- */
+
+/* Estilo Base: Hace visible el enlace usando el color de acento (--khaki) */
+form > a {
+    /* La regla ya existía, pero aquí la confirmamos: */
+    color: var(--khaki); 
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px; /* Le da espacio para que se vea mejor */
+    transition: color 0.2s;
+}
+
+form > a:hover {
+    color: var(--gris-claro); 
+    text-decoration: underline;
+}
+
+.input-row-final a {
+    /* Si el enlace está dentro de este div, este selector es más preciso: */
+    color: var(--khaki);
+    text-decoration: none;
+    padding: 12px 0; /* Alinea verticalmente con el botón */
+}
+
+/* ---------------------------------------------------- */
+/* RESPONSIVE: Ajuste para pantallas pequeñas */
+/* ---------------------------------------------------- */
+
+@media (max-width: 768px) {
+    form {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .perfil-derecha .input-group {
+        flex-basis: 100%; 
+    }
+    
+    .input-row > * {
+        flex-basis: 100%;
+    }
+} 

@@ -1,0 +1,53 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-DYTQ9fdw.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/css/clientes/create.css": {
+    "file": "assets/create-BtUKdMwc.css",
+    "src": "resources/css/clientes/create.css",
+    "isEntry": true,
+    "name": "create",
+    "names": [
+      "create.css"
+    ]
+  },
+  "resources/css/footer_style.css": {
+    "file": "assets/footer_style-Dw6SP5Yd.css",
+    "src": "resources/css/footer_style.css",
+    "isEntry": true,
+    "name": "footer_style",
+    "names": [
+      "footer_style.css"
+    ]
+  },
+  "resources/css/header_style.css": {
+    "file": "assets/header_style-D4eEQGN0.css",
+    "src": "resources/css/header_style.css",
+    "isEntry": true,
+    "name": "header_style",
+    "names": [
+      "header_style.css"
+    ]
+  },
+  "resources/css/master_style.css": {
+    "file": "assets/master_style-BzrMHpNW.css",
+    "src": "resources/css/master_style.css",
+    "isEntry": true,
+    "name": "master_style",
+    "names": [
+      "master_style.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DYUqX5lc.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}

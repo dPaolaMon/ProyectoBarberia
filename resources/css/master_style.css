@@ -1,0 +1,154 @@
+/* Paleta de Colores (Referencia) */
+:root {
+    --verde-pared: #2F5A55;
+    --madera: #8B4F2E;
+    --khaki: #E8D4A7; /* Acento Principal para texto y fondos claros */
+    --cuero: #B85A33; /* Color primario para botones (CTA) */
+    --negro-profundo: #0F1614; /* Fondo del cuerpo */
+    --gris-claro: #f4f4f4;
+}
+
+/* ---------------------------------------------------- */
+/* AJUSTES GENERALES DEL CONTENIDO */
+/* ---------------------------------------------------- */
+.main-content {
+    /* El contenido ocupa todo el espacio restante bajo el header/footer */
+    width: 100%;
+    /* Asegura que el contenido esté debajo del header si es fijo */
+    padding-top: 20px; 
+    padding-bottom: 50px;
+    background-color: var(--negro-profundo);
+    color: var(--gris-claro);
+    min-height: 80vh;
+}
+
+/* ---------------------------------------------------- */
+/* SECCIÓN HERO (Presentación Principal) */
+/* ---------------------------------------------------- */
+.section {
+    /* Flexbox para dividir el hero en texto e imagen (50/50) */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 40px auto; /* Centrado horizontal */
+    padding: 0 20px;
+    gap: 40px;
+}
+
+.text-content {
+    /* El texto ocupa la mitad del espacio */
+    flex: 1; 
+    padding-right: 20px;
+}
+
+.text-content h2 {
+    color: var(--khaki);
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.slogan {
+    color: var(--texto-footer);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.image-container {
+    /* La imagen ocupa la otra mitad del espacio */
+    flex: 1; 
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ---------------------------------------------------- */
+/* BOTÓN DE LLAMADA A LA ACCIÓN (CTA) */
+/* ---------------------------------------------------- */
+.btn-primary {
+    /* Estilo coherente con el color de cuero/madera */
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--cuero);
+    color: var(--gris-claro);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--madera); /* Oscurecer al pasar el mouse */
+}
+
+/* ---------------------------------------------------- */
+/* SECCIÓN DE SERVICIOS (TARJETAS) */
+/* ---------------------------------------------------- */
+.services-preview-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.section-title {
+    color: var(--khaki);
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.services-grid {
+    /* Distribución de las tarjetas en una rejilla de 3 columnas */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--negro-profundo); /* Fondo oscuro */
+    border: 1px solid var(--verde-pared); /* Borde sutil */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Pequeño efecto de elevación al pasar el mouse */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.service-card h4 {
+    color: var(--khaki);
+    margin: 10px 0;
+    font-size: 1.3rem;
+}
+
+.service-icon {
+    /* Estilo para los iconos de servicio (si los tienes) */
+    height: 60px;
+    filter: invert(70%) sepia(20%) saturate(2000%) hue-rotate(20deg); /* Tonos de khaki/ambar */
+}
+
+/* ---------------------------------------------------- */
+/* RESPONSIVE BÁSICO */
+/* ---------------------------------------------------- */
+@media (max-width: 900px) {
+    .section {
+        flex-direction: column; /* Apila el Hero en pantallas pequeñas */
+        text-align: center;
+    }
+
+    .text-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+} 
